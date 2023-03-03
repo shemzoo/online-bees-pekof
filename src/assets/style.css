@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+/*  font-family: 'Ubuntu', sans-serif; */
+
+/* CSS Reset  */
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+Убираем внешние отступы */
+/* body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+} */
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+#app {
+    font-family: 'Ubuntu', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* text-align: center; */
+    color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+    color: #464C58;
+    text-decoration: underline; 
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 260px 25px 260px;
+    border-bottom: 1px solid #0A1E32;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.navbar {
+    margin-top: 17px;
+}
+
+.navbar__item {
+  display: inline-block;
+  padding: 0px 20px;
+
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #2c3e50;
+}
+
+.navbar__link {
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+  color: #0A1E32;
+}
+
+.navbar__link:hover {
+  color: #464C58
+}
+
+.home {
+  text-align: center;
+  background-color: #FFFFFF;
+}
+
+.wishlist {
+  margin-top: 17px;
+}
+
+.promo {
+  height: 505px;
+  background-image: url(./Fanny-Packs-Belt-Bags-Street-Style-2.png);
+}
+
+.container {
+  padding: 0 10vw;  
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.catalog__list-item {
+  flex: 0 0 auto;
+  width: 320px;
+  /* height: 418px; */
+  margin-right: 20px;
+  margin-bottom: 39px;
+  background: #FFFFFF;
+}
+
+.catalog__list-item:hover {
+  filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.15));
+}
