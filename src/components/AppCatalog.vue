@@ -1,5 +1,4 @@
 <template>
-  <h2>Здесь будет каталог</h2>
   <div class="container">
      <ul class="catalog">
         <AppCatalogCard />
@@ -25,7 +24,6 @@ export default {
   },
   mounted() {
     this.getData();
-    console.log(this.getData());
   },
 };
 

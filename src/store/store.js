@@ -5,6 +5,7 @@ import { createStore } from 'vuex';
 export default createStore({
   state: {
     products: [],
+    wishlist: [],
   },
   getters: {
     productsData(state) {

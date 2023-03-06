@@ -1,18 +1,18 @@
 <template>
   <header class="header">
-    <img src="./assets/logo.svg" alt="logo" class="logo">
+    <img src="./assets/images/logo.svg" alt="logo" class="logo">
        <nav class="navbar">
-        <ul class="navbar__list">
+        <!-- <ul class="navbar__list">
           <li class="navbar__item">
             <router-link class="navbar__link" to="/">Главная</router-link>
           </li>
           <li class="navbar__item">
             <router-link class="navbar__link" to="/about">Страница товара</router-link>
           </li>
-        </ul>
+        </ul> -->
     </nav>
     <router-link class="wishlist" to="/">
-      <img class="wishlist__icon" src="./assets/wishlist-icon--fill.svg" alt="wishlist">
+      <img class="wishlist__icon" src="./assets/images/wishlist-icon--fill.svg" alt="wishlist">
     </router-link>
   </header>
 
