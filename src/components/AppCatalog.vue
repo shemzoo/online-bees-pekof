@@ -1,13 +1,13 @@
 <template>
   <div class="container">
      <ul class="catalog">
-        <AppCatalogCard />
-    </ul>
+        <AppCatalogCard :data="productsData" />
+     </ul>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 import AppCatalogCard from './AppCatalogCard.vue';
 
 export default {
@@ -20,6 +20,11 @@ export default {
   methods: {
     ...mapActions([
       'getData',
+    ]),
+  },
+  computed: {
+    ...mapGetters([
+      'productsData',
     ]),
   },
   mounted() {

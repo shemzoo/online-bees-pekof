@@ -5,16 +5,22 @@ import { createStore } from 'vuex';
 export default createStore({
   state: {
     products: [],
-    wishlist: [],
+    favourites: [],
   },
   getters: {
     productsData(state) {
       return state.products;
     },
+    favouriteProducts(state) {
+      return state.favourites;
+    },
   },
   mutations: {
     setDataToState: (state, products) => {
       state.products = products;
+    },
+    setFavoriteProduct: (state, product) => {
+      state.favourites.push(product);
     },
   },
   actions: {
@@ -30,6 +36,10 @@ export default createStore({
           console.log(error);
           return error;
         });
+    },
+    getFavouriteProduct({ commit }, { product }) {
+      commit('setFavoriteProduct', product);
+      return product;
     },
   },
   modules: {

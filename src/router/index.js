@@ -23,6 +23,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/ProductInfoView.vue'),
   },
+  {
+    path: '/favourites',
+    name: 'favourites',
+    component: () => import(/* webpackChunkName: "about" */ '../views/FavouriteProductsView.vue'),
+  },
 ];
 
 const router = createRouter({

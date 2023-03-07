@@ -4,12 +4,12 @@
     <img class="product-info__img" :src="productsData[id].image" alt="фото товара">
     <h2 class="product-info__title">{{ productsData[id].title }}</h2>
     <p class="product-info_description">{{ productsData[id].description }}</p>
-    <button class="btn" @click="addToWishlist(id)">Избранное</button>
+    <button class="btn" @click="addToFavourites(id)">Избранное</button>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'ProdcutInfoView',
@@ -22,10 +22,15 @@ export default {
     ...mapGetters([
       'productsData',
     ]),
+    ...mapActions([
+      'getFavouriteProduct',
+    ]),
   },
   methods: {
-    addToWishlist(id) {
-      console.log(id);
+    addToFavourites(id) {
+      this.$store.dispatch('getFavouriteProduct', {
+        product: this.productsData[id],
+      });
     },
   },
 };
