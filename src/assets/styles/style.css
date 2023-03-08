@@ -25,10 +25,10 @@ html {
  * Remove the margin in all browsers.
  */
 
-body {
+/* body {
   margin: 0;
-}
-
+  min-height: 100vh;
+} */
 /**
  * Render the `main` element consistently in IE.
  */
@@ -378,6 +378,20 @@ template {
     color: #2c3e50;
 }
 
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+}
+
+.page-body {
+  flex-grow: 1;
+  padding-bottom: 90px;
+}
+
 nav a.router-link-exact-active {
   color: #464C58;
   text-decoration: underline; 
@@ -390,6 +404,34 @@ nav a.router-link-exact-active {
   padding: 10px 260px 25px 260px;
   border-bottom: 1px solid #0A1E32;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  width: 100%;
+  height: 90px;
+  background-color: #0A1E32;
+  
+}
+
+.footer__link {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+  padding-top: 32px;
+  float: left;
+}
+
+.footer__contacts {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #FFFFFF;
+  float: right;
+  padding-top: 26px;
 }
 
 .logo {
@@ -431,6 +473,24 @@ nav a.router-link-exact-active {
   margin-top: 17px;
 }
 
+.wishlist__counter-icon {
+  position: relative;
+  bottom: 4px;
+  right: 8px;
+}
+
+.wishlist__counter {
+  position: relative;
+  bottom: 21px;
+  left: 18px;
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 12px;
+  color: #FFFFFF;
+}
+
 .promo {
   height: 505px;
   background-image: url(../images/Fanny-Packs-Belt-Bags-Street-Style-2.png);
@@ -446,17 +506,18 @@ nav a.router-link-exact-active {
 .catalog {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   flex-flow: wrap;
   gap: 38px;
-  padding: 0 260px 0 260px;
+  min-height: 100vh;
+  margin: 0px 230px 0px 230px;
 }
 
-@media (max-width: 1600px) {
+/* @media (max-width: 1600px) {
   .catalog {
     padding: 0 130px 0 130px;
   }
-}
+} */
 
 @media (max-width: 768px) {
   .catalog {
@@ -471,10 +532,9 @@ nav a.router-link-exact-active {
   text-align: center;
   vertical-align: center;
   background: #FFFFFF;
-  cursor: pointer;
 }
 
-.catalog__item--fav {
+/* .catalog__item--fav {
   width: 320px; 
   height: 418px;
   overflow: hidden;
@@ -482,10 +542,10 @@ nav a.router-link-exact-active {
   vertical-align: center;
   background: #FFFFFF;
   cursor: pointer;
-}
+} */
 
 
-.catalog__item:before {
+/* .catalog__item:before {
   content: url('/src/assets/images/wishlist-icon.svg');
   position: relative;
   display: block;
@@ -503,8 +563,17 @@ nav a.router-link-exact-active {
   top: 10px;
   margin-right: 10px;
   z-index: 11;
-}
+} */
 
+.catalog__item-icon {
+  position: relative;
+  display: block;
+  float: right;
+  top: 10px;
+  margin-right: 10px;
+  z-index: 11;
+  cursor: pointer;
+}
 
 
 .catalog__item:hover {
@@ -544,4 +613,115 @@ nav a.router-link-exact-active {
   line-height: 24px;
   color: #464C58;
   margin-bottom: 16px;
+}
+
+.links {
+  margin-bottom:32px;
+}
+
+.links__element {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: underline;
+  color: #464C58;
+}
+
+.links__element:hover {
+  text-decoration: none;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 112px;
+}
+
+.container {
+  margin-top: 32px;
+  margin-left: 260px;
+  margin-right: 260px;
+}
+
+.product-container {
+
+}
+
+.product__img {
+  max-width: 675px;
+  height: 715px;
+  border: 1px solid #E5E5E5;
+  padding: 45px;
+  margin-right: 40px;
+}
+
+.product__info {
+  margin-right: 380px;
+}
+
+.product__title {
+  font-size: 40px;
+  line-height: 48px;
+  margin-bottom: 24px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.product__description {
+  font-size: 16px;
+  list-style: 24px;
+  color: #464C58; 
+  margin-bottom: 24px;
+  text-align: left;
+  line-height: 24px;
+}
+
+.product__price {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.btn {
+  min-width: 200px;
+  background: #FFFFFF;
+  border: 1px solid #0A1E32;
+  border-radius: 4px;
+  color: #0A1E32;
+  padding: 8px 34px 8px 34px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn:before {
+  content: url('/src/assets/images/wishlist-icon.svg');
+  position: relative;
+  display: block;
+  float: left;
+  top: 4px;
+  margin-right: 10px;
+  z-index: 11;
+}
+
+.btn:hover:before {
+  content: url('/src/assets/images/wishlist-icon--fill.svg');
+}
+
+.placeholder-message {
+  margin-top: 123px;
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  color: #464C58
 }

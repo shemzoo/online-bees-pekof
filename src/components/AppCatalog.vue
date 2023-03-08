@@ -1,9 +1,8 @@
 <template>
-  <div class="container">
+  <div class="promo"></div>
      <ul class="catalog">
         <AppCatalogCard :data="productsData" />
      </ul>
-  </div>
 </template>
 
 <script>

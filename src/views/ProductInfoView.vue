@@ -1,11 +1,23 @@
-<template>
-  <h1>Product {{ id }} Details Page</h1>
-  <div class="product-info">
-    <img class="product-info__img" :src="productsData[id].image" alt="фото товара">
-    <h2 class="product-info__title">{{ productsData[id].title }}</h2>
-    <p class="product-info_description">{{ productsData[id].description }}</p>
-    <button class="btn" @click="addToFavourites(id)">Избранное</button>
+<template>t
+  <div class="container">
+    <div class="links">
+      <router-link to="/" class="links__element">Главная</router-link>
+        ›
+      <router-link to=""
+      class="links__element">{{ productsData[id].title }}</router-link>
+    </div>
+    <div class="product">
+      <img class="product__img" :src="productsData[id].image" alt="фото товара">
+      <div class="product__info">
+        <h2 class="product__title">{{ productsData[id].title }}</h2>
+        <p class="product__description">{{ productsData[id].description }}</p>
+        <p class="product__price">{{ productsData[id].price }} руб.</p>
+        <button class="btn" @click="addToFavourites(id)">
+          Избранное</button>
+      </div>
+    </div>
   </div>
+
 </template>
 
 <script>

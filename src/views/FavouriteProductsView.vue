@@ -1,17 +1,15 @@
 <template>
+  <div class="container">
+    <div class="links">
+      <router-link to="/" class="links__element">Главная</router-link>
+        ›
+      <router-link to="/favourites"
+      class="links__element">Избранное</router-link>
+  </div>
   <h1>Избранное</h1>
-  <!-- <ul class="favourites">
-    <li v-for="item in favouriteProducts" :key="item.product.id">
-      <p>{{ item.product.description }}</p>
-    </li>
+  <h1 v-if="favouriteProducts.length === 0" class="placeholder-message">Список избранного пуст</h1>
+  </div>
 
-    <li class="catalog__item"
-      v-for="item in favouriteProducts" :key="item.product.id">
-      <img class="catalog__item-image" :src="item.product.image" alt="product">
-      <h3 class="catalog__item-title">{{ item.product.title }}</h3>
-      <p class="catalog__item-price">{{ item.product.price }} руб.</p>
-    </li>
-  </ul> -->
   <ul class="catalog">
       <AppCatalogCard :data="favouriteProducts" :usedInFavorites='true' />
   </ul>
