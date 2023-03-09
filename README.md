@@ -1,5 +1,7 @@
 # online-bees-pekof
 
+Сайт для салона "ПЕКОФ"
+
 ## Project setup
 ```
 npm install
