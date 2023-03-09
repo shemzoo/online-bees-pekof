@@ -1,11 +1,15 @@
 <template>
   <li
-    class="catalog__item"
-    v-for="product in data" :key="product.id">
+    class="catalog__item" v-for="product in data" :key="product.id">
     <img v-if="usedInFavorites"
      src="../assets/images/close.svg" class="catalog__item-icon" alt="icon"
      @click="removeFromFavourites(product)" @keydown="bar">
-    <img v-else src="../assets/images/wishlist-icon.svg" class="catalog__item-icon" alt="icon">
+    <img v-else-if="!inFavouritesCheck(product.id)" src="../assets/images/wishlist-icon.svg"
+     class="catalog__item-icon" alt="icon"
+     @click="addToFavourites(product.id)" @keydown="bar">
+    <img v-else-if="inFavouritesCheck(product.id)" src="../assets/images/wishlist-icon--fill.svg"
+     class="catalog__item-icon" alt="icon"
+     @click="removeFromFavourites(product)" @keydown="bar">
     <img @click="goToInfo(product.id)" @keydown="goToDetails()"
      class="catalog__item-image" :src="product.image" alt="product">
     <h3 class="catalog__item-title">{{ product.title }}</h3>
@@ -15,21 +19,33 @@
 
 <script>
 
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'AppCatalogCard',
   props: ['data', 'usedInFavorites'],
+  computed: {
+    ...mapGetters([
+      'favouriteProducts',
+    ]),
+  },
   methods: {
     goToInfo(productId) {
       this.$router.push({ name: 'info', params: { id: productId } });
     },
-    removeFromFavourites(product) {
-      this.$store.state.favourites.pop(product);
-      console.log(product);
+    addToFavourites(id) {
+      this.$store.dispatch('getFavouriteProduct', {
+        product: this.data[id - 1],
+      });
     },
-  },
-  created() {
-    // props are exposed on `this`
-    console.log(this.usedInFavorites);
+    removeFromFavourites(product) {
+      const id = this.favouriteProducts.indexOf(product);
+      console.log(this.favouriteProducts);
+      this.$store.state.favourites.splice(id, 1);
+    },
+    inFavouritesCheck(id) {
+      return this.favouriteProducts.find((item) => item.id === id);
+    },
   },
 };
 </script>

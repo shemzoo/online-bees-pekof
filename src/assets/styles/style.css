@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
-/*  font-family: 'Ubuntu', sans-serif; */
 
 /* ! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -479,6 +478,10 @@ nav a.router-link-exact-active {
   right: 8px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .wishlist__counter {
   position: relative;
   bottom: 21px;
@@ -489,40 +492,30 @@ nav a.router-link-exact-active {
   font-size: 8px;
   line-height: 12px;
   color: #FFFFFF;
+  text-decoration: none;
 }
 
 .promo {
   height: 505px;
   background-image: url(../images/Fanny-Packs-Belt-Bags-Street-Style-2.png);
   margin-bottom: 112px;
-}
-
-@media (max-width: 768px) {
-  .promo {
-    background-size: 100% 100%;
-  }
+  /* background-size: cover; */
 }
 
 .catalog {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   flex-flow: wrap;
   gap: 38px;
   min-height: 100vh;
   margin: 0px 230px 0px 230px;
+  
 }
 
-/* @media (max-width: 1600px) {
-  .catalog {
-    padding: 0 130px 0 130px;
-  }
-} */
+/* Firefox remove list-styling */ 
 
-@media (max-width: 768px) {
-  .catalog {
-    padding: 0;
-  }
+.catalog {
+  list-style: none outside none;
 }
 
 .catalog__item {
@@ -533,37 +526,6 @@ nav a.router-link-exact-active {
   vertical-align: center;
   background: #FFFFFF;
 }
-
-/* .catalog__item--fav {
-  width: 320px; 
-  height: 418px;
-  overflow: hidden;
-  text-align: center;
-  vertical-align: center;
-  background: #FFFFFF;
-  cursor: pointer;
-} */
-
-
-/* .catalog__item:before {
-  content: url('/src/assets/images/wishlist-icon.svg');
-  position: relative;
-  display: block;
-  float: right;
-  top: 10px;
-  margin-right: 10px;
-  z-index: 11;
-}
-
-.catalog__item--fav:before {
-  content: url('/src/assets/images/close.svg');
-  position: relative;
-  display: block;
-  float: right;
-  top: 10px;
-  margin-right: 10px;
-  z-index: 11;
-} */
 
 .catalog__item-icon {
   position: relative;
@@ -590,6 +552,8 @@ nav a.router-link-exact-active {
   padding-bottom: 0;
 
   margin-bottom: 16px;
+
+  cursor: pointer;
 }
 
 .catalog__item-image img {
@@ -645,13 +609,9 @@ nav a.router-link-exact-active {
   margin-right: 260px;
 }
 
-.product-container {
-
-}
-
 .product__img {
-  max-width: 675px;
-  height: 715px;
+  max-width: 680px;
+  max-height: 715px;
   border: 1px solid #E5E5E5;
   padding: 45px;
   margin-right: 40px;
@@ -662,6 +622,7 @@ nav a.router-link-exact-active {
 }
 
 .product__title {
+  width: 525px;
   font-size: 40px;
   line-height: 48px;
   margin-bottom: 24px;
@@ -715,6 +676,16 @@ nav a.router-link-exact-active {
   content: url('/src/assets/images/wishlist-icon--fill.svg');
 }
 
+.disabled {
+  color: grey;
+  border: 1px solid grey;
+  cursor: not-allowed;
+}
+
+.btn.disabled:before {
+  content: url('/src/assets/images/wishlist-icon--grey.svg');
+}
+
 .placeholder-message {
   margin-top: 123px;
   align-items: center;
@@ -724,4 +695,8 @@ nav a.router-link-exact-active {
   font-size: 32px;
   line-height: 40px;
   color: #464C58
+}
+
+.test {
+  width: 50px;
 }

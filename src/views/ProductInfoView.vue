@@ -12,7 +12,10 @@
         <h2 class="product__title">{{ productsData[id].title }}</h2>
         <p class="product__description">{{ productsData[id].description }}</p>
         <p class="product__price">{{ productsData[id].price }} руб.</p>
-        <button class="btn" @click="addToFavourites(id)">
+        <button
+          :disabled="isDisabledCheck(id)"
+          class="btn" @click="addToFavourites(id)"
+          :class="{'disabled' : isDisabledCheck(id)}">
           Избранное</button>
       </div>
     </div>
@@ -32,7 +35,7 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'productsData',
+      'productsData', 'favouriteProducts',
     ]),
     ...mapActions([
       'getFavouriteProduct',
@@ -43,6 +46,9 @@ export default {
       this.$store.dispatch('getFavouriteProduct', {
         product: this.productsData[id],
       });
+    },
+    isDisabledCheck(id) {
+      return this.$store.state.favourites.find((item) => item.id - 1 === id);
     },
   },
 };
