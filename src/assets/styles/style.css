@@ -525,6 +525,8 @@ a {
   text-align: center;
   vertical-align: center;
   background: #FFFFFF;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .catalog__item-icon {
@@ -533,7 +535,7 @@ a {
   float: right;
   top: 10px;
   margin-right: 10px;
-  z-index: 11;
+  z-index: 2;
   cursor: pointer;
 }
 

@@ -30,10 +30,6 @@ export default createStore({
         .then((products) => {
           commit('setDataToState', products.data);
           return products;
-        })
-        .catch((error) => {
-          console.log(error);
-          return error;
         });
     },
     getFavouriteProduct({ commit }, { product }) {

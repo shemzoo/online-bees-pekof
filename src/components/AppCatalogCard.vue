@@ -1,16 +1,16 @@
 <template>
-  <li
+  <li @click="goToInfo(product.id)" @keydown="goToDetails()"
     class="catalog__item" v-for="product in data" :key="product.id">
     <img v-if="usedInFavorites"
      src="../assets/images/close.svg" class="catalog__item-icon" alt="icon"
-     @click="removeFromFavourites(product)" @keydown="bar">
+     @click.stop="removeFromFavourites(product)" @keydown="bar">
     <img v-else-if="!inFavouritesCheck(product.id)" src="../assets/images/wishlist-icon.svg"
      class="catalog__item-icon" alt="icon"
-     @click="addToFavourites(product.id)" @keydown="bar">
+     @click.stop="addToFavourites(product.id)" @keydown="bar">
     <img v-else-if="inFavouritesCheck(product.id)" src="../assets/images/wishlist-icon--fill.svg"
      class="catalog__item-icon" alt="icon"
-     @click="removeFromFavourites(product)" @keydown="bar">
-    <img @click="goToInfo(product.id)" @keydown="goToDetails()"
+     @click.stop="removeFromFavourites(product)" @keydown="bar">
+    <img
      class="catalog__item-image" :src="product.image" alt="product">
     <h3 class="catalog__item-title">{{ product.title }}</h3>
     <p class="catalog__item-price">{{ product.price }} руб.</p>
@@ -40,7 +40,6 @@ export default {
     },
     removeFromFavourites(product) {
       const id = this.favouriteProducts.indexOf(product);
-      console.log(this.favouriteProducts);
       this.$store.state.favourites.splice(id, 1);
     },
     inFavouritesCheck(id) {
