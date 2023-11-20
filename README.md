@@ -1,6 +1,6 @@
 # online-bees-pekof
 
-Сайт для салона "ПЕКОФ"
+Demo website for PEKOF
 
 ## Project setup
 ```
