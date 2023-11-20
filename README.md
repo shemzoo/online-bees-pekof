@@ -1,6 +1,6 @@
 # online-bees-pekof
 
-Demo website for PEKOF
+Demo website for PEKOF. Take-home assignment.
 
 ## Project setup
 ```
